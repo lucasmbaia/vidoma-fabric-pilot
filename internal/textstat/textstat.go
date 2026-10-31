@@ -11,5 +11,9 @@ func CountWords(s string) int {
 
 // CountLines devolve o número de linhas de s.
 func CountLines(s string) int {
-	return strings.Count(s, "\n")
+	lines := strings.Count(s, "\n")
+	if len(s) > 0 && s[len(s)-1] != '\n' {
+		lines++
+	}
+	return lines
 }
